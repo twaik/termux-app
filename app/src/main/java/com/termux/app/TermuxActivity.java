@@ -47,6 +47,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.termux.R;
+import com.termux.Lorie.LorieActivity;
 import com.termux.terminal.EmulatorDebug;
 import com.termux.terminal.TerminalColors;
 import com.termux.terminal.TerminalSession;
@@ -299,6 +300,13 @@ public final class TermuxActivity extends Activity implements ServiceConnection 
         findViewById(R.id.toggle_keyboard_button).setOnLongClickListener(v -> {
             toggleShowExtraKeys();
             return true;
+        });
+
+        findViewById(R.id.open_lorie_button).setOnClickListener(v -> {
+            if (new File(getFilesDir() + "/usr/lib/liblorie-android.so").isFile()) {
+                Intent i = new Intent(this, LorieActivity.class);
+                startActivity(i);
+            } else Toast.makeText(this, "sparkle package is not installed", Toast.LENGTH_SHORT).show();
         });
 
         registerForContextMenu(mTerminalView);

@@ -64,6 +64,21 @@
                     android:layout_weight="1"
                     android:text="@string/new_session" />
             </LinearLayout>
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/open_lorie_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/open_lorie" />
+            </LinearLayout>
         </LinearLayout>
 
     </androidx.drawerlayout.widget.DrawerLayout>
